@@ -1,0 +1,19 @@
+pipeline {
+  agent none
+  stages {
+    stage('input') {
+      steps {
+        input(message: 'Hello World!', ok: 'Submit')
+      }
+    }
+    stage('all done') {
+      agent any
+      steps {
+        sh '''
+          hostname
+          cat /etc/redhat-release
+        '''
+      }
+    }
+  }
+}
