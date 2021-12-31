@@ -1,0 +1,15 @@
+
+pipiline {
+    agent any
+    options {
+              timestamp()
+              overrideIndexTriggers(true)
+}
+    stages {
+      stage ("build") {
+         steps {
+            echo 'Hello world 4'
+}
+}
+}
+}
